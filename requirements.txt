@@ -2,3 +2,5 @@ anthropic==0.39.0
 openai==1.54.4
 protobuf==5.28.3
 streamlit==1.39.0
+google-cloud-translate
+google-auth
