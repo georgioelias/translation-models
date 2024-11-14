@@ -13,7 +13,10 @@ credentials = service_account.Credentials.from_service_account_info(gcreds)
 
 # Initialize Google Cloud Translate client with credentials
 translate_client = translate.Client(credentials=credentials)
-
+st.set_page_config(
+    page_title="Translation",  
+    page_icon="🈯"                  
+)
 st.title("Multilingual Translator App")
 st.write("Translate text into English using your preferred AI model!")
 
