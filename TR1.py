@@ -8,7 +8,8 @@ import os
 
 openai_client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 anthropic_client = anthropic.Anthropic(api_key=st.secrets["ANTHROPIC_API_KEY"])
-credentials = service_account.Credentials.from_service_account_file(st.secrets["gcp_service_account"])
+gcreds = st.secrets["gcp_service_account"]
+credentials = service_account.Credentials.from_service_account_info(gcreds)
 
 # Initialize Google Cloud Translate client with credentials
 translate_client = translate.Client(credentials=credentials)
