@@ -6,9 +6,9 @@ import anthropic
 import os
 
 
-openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-credentials = service_account.Credentials.from_service_account_file("speech-to-text-cloud-key.json")
+openai_client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+anthropic_client = anthropic.Anthropic(api_key=st.secrets["ANTHROPIC_API_KEY"])
+credentials = service_account.Credentials.from_service_account_file(st.secrets["gcp_service_account"])
 
 # Initialize Google Cloud Translate client with credentials
 translate_client = translate.Client(credentials=credentials)
